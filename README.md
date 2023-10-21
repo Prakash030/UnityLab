@@ -10,6 +10,9 @@ After cloning, install all the dependencies using the command:
 or 
 `npm install`
 
+The project is deployed using Netlify and the link is given below:
+https://main--radiant-cascaron-8c6749.netlify.app/
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
