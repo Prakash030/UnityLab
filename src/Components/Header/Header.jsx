@@ -12,7 +12,7 @@ function Header() {
     const [results, setResults] = useState([]);
     const [selectedPostId, setSelectedPostId] = useState('')
     const [error, setError] = useState(null)
-    const [isLoding, setIsLoding] = useState(true);
+    const [toggle, setToggle] = useState(false);
 
     const handleInput = (e)=>{
         setquery(e.target.value);
@@ -24,9 +24,7 @@ function Header() {
         setResults(response.data.hits);
         console.log(response.data.hits);
         setquery('')
-        setTimeout(() => {
-          setIsLoding(false);
-        }, 3000);
+        setToggle(!toggle);
         if(response.data.hits.length ===0){
           setError("Error fetching the details.");
         }
@@ -57,18 +55,19 @@ function Header() {
                 <div className="inputSearch">
                     <input type="text" name='search' value={query} onChange={handleInput} placeholder='Enter your query'/>
                 </div>
-                <button onClick={handleSearch}><FiSearch size={25}/></button>
+                <button onClick={handleSearch} ><FiSearch size={25}/></button>
                 
             </div>
         </div>
         <div className="results-container">
           {
-            isLoding || selectedPostId?(
+            selectedPostId?(
               <PostInfo postId = {selectedPostId} onClose={handleClosePostDetail} />
             )
             :
             (
               <ul>
+                <h1 style={{ display: toggle ? 'block' : 'none' }} className='display'>Search Results:</h1>
               {results.map((result) => (
                   <ResponsePage key={result.objectID} result={result} onClick={()=>handlePostClick(result.objectID)}/>
               ))}

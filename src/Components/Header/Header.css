@@ -8,6 +8,10 @@
     display: flex;
     padding: 2rem;
 }
+.display{
+    text-align: center;
+    margin-top: 20px;
+}
 .search .inputSearch input[type="text"]{
     border: none;
     outline: none;
