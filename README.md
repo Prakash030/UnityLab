@@ -1,5 +1,9 @@
 # React + Vite
 
+To clone the repository: git clone https://github.com/Prakash030/UnityLab.git
+
+After cloning, install all the dependencies using the command : npm i
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
