@@ -12,6 +12,7 @@ function Header() {
     const [results, setResults] = useState([]);
     const [selectedPostId, setSelectedPostId] = useState('')
     const [error, setError] = useState(null)
+    const [isLoding, setIsLoding] = useState(true);
 
     const handleInput = (e)=>{
         setquery(e.target.value);
@@ -23,6 +24,9 @@ function Header() {
         setResults(response.data.hits);
         console.log(response.data.hits);
         setquery('')
+        setTimeout(() => {
+          setIsLoding(false);
+        }, 3000);
         if(response.data.hits.length ===0){
           setError("Error fetching the details.");
         }
@@ -59,7 +63,7 @@ function Header() {
         </div>
         <div className="results-container">
           {
-            selectedPostId?(
+            isLoding || selectedPostId?(
               <PostInfo postId = {selectedPostId} onClose={handleClosePostDetail} />
             )
             :
