@@ -10,6 +10,8 @@ After cloning, install all the dependencies using the command:
 or 
 `npm install`
 
+After successful installation of the app, to run locally use the command:  `npm run dev`
+
 The project is deployed using Netlify and the link is given: 
 https://main--radiant-cascaron-8c6749.netlify.app/
 
