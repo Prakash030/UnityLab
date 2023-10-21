@@ -12,7 +12,7 @@ function PostInfo({ postId, onClose }) {
     useEffect(() => {
         const getPost = async () => {
             try {
-                const response = await axios.get(`http://hn.algolia.com/api/v1/items/${postId}`)
+                const response = await axios.get(`https://hn.algolia.com/api/v1/items/${postId}`)
                 setPost(response.data);
                 console.log(response.data);
 
