@@ -27,7 +27,7 @@ function PostInfo({ postId, onClose }) {
 
     if(error){
         console.log(post)
-        toast(error);
+        toast.error(error);
         setError("");
       }
 
