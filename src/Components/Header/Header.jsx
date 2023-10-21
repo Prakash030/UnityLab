@@ -19,7 +19,7 @@ function Header() {
     }
     const handleSearch = async() =>{
         try{
-        const response = await axios.get(`http://hn.algolia.com/api/v1/search?query=${query}`);
+        const response = await axios.get(`https://hn.algolia.com/api/v1/search?query=${query}`);
         console.log(query)
         setResults(response.data.hits);
         console.log(response.data.hits);
